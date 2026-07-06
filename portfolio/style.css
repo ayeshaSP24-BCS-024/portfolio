@@ -1,0 +1,111 @@
+body{
+font-family: Arial;
+margin:0;
+background:#f4f6f9;
+}
+
+/* Header */
+
+header{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+/* Navigation */
+
+nav{
+background:#34495e;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+nav ul li{
+margin:15px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav ul li a:hover{
+color:yellow;
+}
+
+/* Sections */
+
+main{
+width:80%;
+margin:auto;
+padding:20px;
+}
+
+h2{
+color:#2c3e50;
+border-bottom:3px solid #3498db;
+padding-bottom:5px;
+}
+
+/* Profile Section */
+
+.profile{
+display:flex;
+align-items:center;
+gap:30px;
+}
+
+.profile img{
+width:200px;
+border-radius:50%;
+border:5px solid #3498db;
+}
+
+/* Tables */
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table, th, td{
+border:1px solid #ccc;
+}
+
+th, td{
+padding:10px;
+text-align:left;
+}
+
+/* Form */
+
+form{
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+input, select, textarea{
+width:100%;
+padding:8px;
+margin-top:5px;
+margin-bottom:10px;
+}
+
+/* Footer */
+
+footer{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
