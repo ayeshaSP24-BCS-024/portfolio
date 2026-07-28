@@ -2,81 +2,200 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Contact Me</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Ayesha Mehmood</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-<h1>Contact Me</h1>
-</header>
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <h1>Contact Me</h1>
+  <p class="subtitle">Let's work together</p>
+</section>
 
+<!-- ===== NAVIGATION ===== -->
 <nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <ul id="navMenu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
 </nav>
 
+<!-- ===== MAIN ===== -->
 <main>
 
-<form autocomplete="on">
+  <section class="section">
+    <h2 class="section-title">📬 Get In Touch</h2>
+    <p style="color: #666; margin-bottom: 30px;">Have a question or want to work together? Fill out the form below!</p>
 
-<label>Full Name</label>
-<input type="text" placeholder="Enter your name" required>
+    <div class="contact-wrapper">
+      <!-- Form -->
+      <form id="contactForm" action="https://formspree.io/f/mlgqgqbb" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </div>
+        </div>
 
-<label>Email</label>
-<input type="email" placeholder="Enter your email" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" name="phone" placeholder="Enter phone number" required>
+          </div>
+          <div class="form-group">
+            <label>Country</label>
+            <input type="text" name="country" value="Pakistan" readonly>
+          </div>
+        </div>
 
-<label>Phone</label>
-<input type="number" placeholder="Enter phone number" required>
+        <div class="form-group">
+          <label>Gender</label>
+          <div style="display: flex; gap: 20px; padding-top: 5px;">
+            <label style="font-weight: normal;"><input type="radio" name="gender" value="Male"> Male</label>
+            <label style="font-weight: normal;"><input type="radio" name="gender" value="Female"> Female</label>
+          </div>
+        </div>
 
-<label>Country</label>
-<input type="text" value="Pakistan" readonly>
+        <div class="form-group">
+          <label>Services Needed</label>
+          <div style="display: flex; flex-wrap: wrap; gap: 20px; padding-top: 5px;">
+            <label style="font-weight: normal;"><input type="checkbox" name="services" value="Web Design"> Web Design</label>
+            <label style="font-weight: normal;"><input type="checkbox" name="services" value="Web Development"> Web Development</label>
+            <label style="font-weight: normal;"><input type="checkbox" name="services" value="App Development"> App Development</label>
+          </div>
+        </div>
 
-<label>Gender</label>
-<input type="radio" name="gender"> Male
-<input type="radio" name="gender"> Female
+        <div class="form-group">
+          <label>How did you hear about me?</label>
+          <select name="heard_from" required>
+            <option value="">Select</option>
+            <option value="Google">Google</option>
+            <option value="Friend">Friend</option>
+            <option value="Social Media">Social Media</option>
+          </select>
+        </div>
 
-<br><br>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Write your message here..." required></textarea>
+        </div>
 
-<label>Services Needed</label>
-<br>
-<input type="checkbox"> Web Design
-<input type="checkbox"> Web Development
-<input type="checkbox"> App Development
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button type="submit" class="btn">📤 Send Message</button>
+          <button type="reset" class="btn btn-secondary">🔄 Reset</button>
+        </div>
+      </form>
 
-<br><br>
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Connect With Me</h3>
+        <div class="contact-item">
+          <span class="icon">📧</span>
+          <div>
+            <strong>Email</strong><br>
+            <a href="mailto:ayesha@example.com" style="color: #3498db; text-decoration: none;">ayesha@example.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="icon">💼</span>
+          <div>
+            <strong>LinkedIn</strong><br>
+            <a href="#" style="color: #3498db; text-decoration: none;">Connect with me</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="icon">🐙</span>
+          <div>
+            <strong>GitHub</strong><br>
+            <a href="#" style="color: #3498db; text-decoration: none;">View my projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<label>How did you hear about me?</label>
-
-<select required>
-<option value="">Select</option>
-<option>Google</option>
-<option>Friend</option>
-<option>Social Media</option>
-</select>
-
-<br><br>
-
-<label>Message</label>
-<textarea placeholder="Write message here"></textarea>
-
-<br><br>
-
-<button type="submit">Submit</button>
-<button type="reset">Reset</button>
-
-</form>
+    <!-- Success Message -->
+    <div id="form-success" style="display:none; background: #d4edda; color: #155724; padding: 25px; border-radius: 12px; margin-top: 30px; text-align: center;">
+      <h3>✅ Thank You!</h3>
+      <p>Your message has been sent successfully. I'll get back to you soon!</p>
+    </div>
+  </section>
 
 </main>
 
+<!-- ===== FOOTER ===== -->
 <footer>
-<p>© 2026 Ayesha Mehmood</p>
+  <p>© 2026 Ayesha Mehmood | COMSATS University</p>
 </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navMenu').classList.toggle('open');
+}
+
+document.querySelectorAll('#navMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navMenu').classList.remove('open');
+  });
+});
+
+const currentPage = window.location.pathname.split('/').pop() || 'contact.html';
+document.querySelectorAll('#navMenu a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  }
+});
+
+// Scroll Reveal
+const sections = document.querySelectorAll('.section');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+sections.forEach(section => revealObserver.observe(section));
+
+// Form Submission
+const form = document.getElementById('contactForm');
+const successDiv = document.getElementById('form-success');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const formData = new FormData(form);
+  
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    
+    if (response.ok) {
+      form.style.display = 'none';
+      successDiv.style.display = 'block';
+    } else {
+      alert('❌ There was a problem. Please try again.');
+    }
+  } catch (error) {
+    alert('❌ Network error. Please check your connection.');
+  }
+});
+</script>
 
 </body>
 </html>

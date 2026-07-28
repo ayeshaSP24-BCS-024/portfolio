@@ -2,46 +2,268 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home | Ayesha Mehmood Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-<h1>Ayesha Mehmood</h1>
-<p>Web Development Student</p>
-</header>
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <h1>Ayesha Mehmood</h1>
+  <p class="subtitle">Web Development Student</p>
+  <p class="tagline">🚀 Building the future, one line of code at a time</p>
+</section>
 
+<!-- ===== NAVIGATION ===== -->
 <nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <ul id="navMenu">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
 </nav>
 
+<!-- ===== MAIN ===== -->
 <main>
 
-<section class="profile">
-<img src="https://via.placeholder.com/200" alt="Profile Image">
+  <!-- About Section -->
+  <section class="section" id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="https://via.placeholder.com/200" alt="Ayesha Mehmood">
+        <div class="badge">🌟 Web Developer</div>
+      </div>
+      <div class="about-text">
+        <p>
+          Hello! I'm <strong>Ayesha Mehmood</strong>, a passionate Computer Science student at COMSATS University, Vehari. 
+          I love learning new technologies and building things that make a difference.
+        </p>
+        <p>
+          I specialize in <strong>Web Development</strong>, <strong>Flutter</strong>, and have a keen interest in 
+          <strong>Artificial Intelligence</strong> and <strong>Automation</strong>.
+        </p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number" id="projectsCount">0</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" id="skillsCount">0</div>
+            <div class="stat-label">Skills</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" id="hobbiesCount">0</div>
+            <div class="stat-label">Hobbies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div>
-<h2>Welcome</h2>
-<p>
-Hello! I am Ayesha Mehmood, a student learning Web Development,
-HTML, CSS, JavaScript and Flutter. This is my personal portfolio website.
-</p>
-</div>
+  <!-- Skills Section -->
+  <section class="section" id="skills">
+    <h2 class="section-title">My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <span class="skill-name">HTML5</span>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill" data-width="95%"></div>
+        </div>
+        <span class="skill-percent">95%</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">CSS3</span>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill" data-width="90%"></div>
+        </div>
+        <span class="skill-percent">90%</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">JavaScript</span>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill" data-width="85%"></div>
+        </div>
+        <span class="skill-percent">85%</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Flutter & Dart</span>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill" data-width="80%"></div>
+        </div>
+        <span class="skill-percent">80%</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Java</span>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill" data-width="75%"></div>
+        </div>
+        <span class="skill-percent">75%</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">OOP</span>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill" data-width="85%"></div>
+        </div>
+        <span class="skill-percent">85%</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">DSA</span>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill" data-width="70%"></div>
+        </div>
+        <span class="skill-percent">70%</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">SQL</span>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill" data-width="75%"></div>
+        </div>
+        <span class="skill-percent">75%</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">AI & Automation</span>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill" data-width="60%"></div>
+        </div>
+        <span class="skill-percent">60%</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Gaming</span>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill" data-width="90%"></div>
+        </div>
+        <span class="skill-percent">90%</span>
+      </div>
+    </div>
+  </section>
 
-</section>
+  <!-- Hobbies Section -->
+  <section class="section" id="hobbies">
+    <h2 class="section-title">Hobbies</h2>
+    <div class="hobbies-grid">
+      <div class="hobby-card">
+        <div class="hobby-icon">💻</div>
+        <h4>Programming</h4>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-icon">🎮</div>
+        <h4>Gaming</h4>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-icon">🚀</div>
+        <h4>Learning New Tech</h4>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-icon">📺</div>
+        <h4>Tech Videos</h4>
+      </div>
+    </div>
+  </section>
 
 </main>
 
+<!-- ===== FOOTER ===== -->
 <footer>
-<p>© 2026 yesha Mehmood | COMSATS University</p>
+  <p>© 2026 Ayesha Mehmood | COMSATS University</p>
 </footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+// Hamburger Menu
+function toggleMenu() {
+  document.getElementById('navMenu').classList.toggle('open');
+}
+
+document.querySelectorAll('#navMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navMenu').classList.remove('open');
+  });
+});
+
+// Active Nav Link
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('#navMenu a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  }
+});
+
+// ===== SCROLL REVEAL =====
+const sections = document.querySelectorAll('.section');
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.15,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+sections.forEach(section => {
+  revealObserver.observe(section);
+});
+
+// ===== SKILL BARS =====
+function animateSkillBars() {
+  const bars = document.querySelectorAll('.skill-bar-fill');
+  bars.forEach(bar => {
+    const rect = bar.getBoundingClientRect();
+    if (rect.top < window.innerHeight && !bar.classList.contains('animated')) {
+      const width = bar.getAttribute('data-width');
+      bar.style.width = width;
+      bar.classList.add('animated');
+    }
+  });
+}
+
+window.addEventListener('scroll', animateSkillBars);
+window.addEventListener('load', animateSkillBars);
+
+// ===== COUNTER ANIMATION =====
+function animateCounter(element, target) {
+  let current = 0;
+  const increment = target / 60;
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      element.textContent = target;
+      clearInterval(timer);
+    } else {
+      element.textContent = Math.floor(current);
+    }
+  }, 20);
+}
+
+// Trigger counters when section is visible
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const projectsEl = document.getElementById('projectsCount');
+      const skillsEl = document.getElementById('skillsCount');
+      const hobbiesEl = document.getElementById('hobbiesCount');
+      
+      if (projectsEl && projectsEl.textContent === '0') {
+        animateCounter(projectsEl, 5);
+        animateCounter(skillsEl, 10);
+        animateCounter(hobbiesEl, 4);
+      }
+    }
+  });
+}, { threshold: 0.5 });
+
+const aboutSection = document.querySelector('#about');
+if (aboutSection) statsObserver.observe(aboutSection);
+</script>
 
 </body>
 </html>

@@ -2,72 +2,125 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Projects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Ayesha Mehmood</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-<h1>My Projects</h1>
-</header>
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <h1>My Projects</h1>
+  <p class="subtitle">Things I've built</p>
+</section>
 
+<!-- ===== NAVIGATION ===== -->
 <nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <ul id="navMenu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
 </nav>
 
+<!-- ===== MAIN ===== -->
 <main>
 
-<section>
+  <!-- Completed Projects -->
+  <section class="section">
+    <h2 class="section-title">✅ Completed Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <span class="category">Web Development</span>
+        <h3>Portfolio Website</h3>
+        <p>Personal portfolio website built with HTML, CSS, and JavaScript.</p>
+        <span class="status completed">Completed</span>
+        <br>
+        <a href="#" class="project-link">🔗 View on GitHub →</a>
+      </div>
 
-<table>
+      <div class="project-card">
+        <span class="category">Flutter App</span>
+        <h3>GPA Calculator</h3>
+        <p>Mobile application to calculate GPA for university students.</p>
+        <span class="status completed">Completed</span>
+        <br>
+        <a href="#" class="project-link">🔗 View on GitHub →</a>
+      </div>
 
-<tr>
-<th>Project Name</th>
-<th>Category</th>
-<th>Description</th>
-<th>Link</th>
-<th>Status</th>
-</tr>
+      <div class="project-card">
+        <span class="category">Flutter</span>
+        <h3>Dice App</h3>
+        <p>Random dice rolling application for games and decision making.</p>
+        <span class="status completed">Completed</span>
+        <br>
+        <a href="#" class="project-link">🔗 View on GitHub →</a>
+      </div>
+    </div>
+  </section>
 
-<tr>
-<td>Portfolio Website</td>
-<td>Web Development</td>
-<td>Personal portfolio using HTML & CSS</td>
-<td><a href="#">GitHub</a></td>
-<td>Completed</td>
-</tr>
+  <!-- Upcoming Projects -->
+  <section class="section">
+    <h2 class="section-title">🚀 Upcoming Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <span class="category">Full-Stack</span>
+        <h3>E-Commerce App</h3>
+        <p>Full-stack e-commerce platform with payment integration.</p>
+        <span class="status progress">In Progress</span>
+      </div>
 
-<tr>
-<td>GPA Calculator</td>
-<td>Flutter App</td>
-<td>Mobile application to calculate GPA</td>
-<td><a href="#">GitHub</a></td>
-<td>Completed</td>
-</tr>
-
-<tr>
-<td>Dice App</td>
-<td>Flutter</td>
-<td>Random dice rolling mobile application</td>
-<td><a href="#">GitHub</a></td>
-<td>Completed</td>
-</tr>
-
-</table>
-
-</section>
+      <div class="project-card">
+        <span class="category">AI</span>
+        <h3>AI Chatbot</h3>
+        <p>Intelligent chatbot using natural language processing.</p>
+        <span class="status planning">Planning</span>
+      </div>
+    </div>
+  </section>
 
 </main>
 
+<!-- ===== FOOTER ===== -->
 <footer>
-<p>© 2026 Ayesha Mehmood</p>
+  <p>© 2026 Ayesha Mehmood | COMSATS University</p>
 </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navMenu').classList.toggle('open');
+}
+
+document.querySelectorAll('#navMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navMenu').classList.remove('open');
+  });
+});
+
+const currentPage = window.location.pathname.split('/').pop() || 'projects.html';
+document.querySelectorAll('#navMenu a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  }
+});
+
+// Scroll Reveal
+const sections = document.querySelectorAll('.section');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+sections.forEach(section => revealObserver.observe(section));
+</script>
 
 </body>
 </html>
